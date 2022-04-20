@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "111174cf-9fe0-498a-8266-d5f7ed0a1737",
+		"name": "Microservice-assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Service",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"Electrician\",\r\n        \"description\": \"Fan, Switch Socket Repairs C.\",\r\n        \"servicePrice\": 299\r\n    },\r\n    {\r\n        \"name\": \"Yoga Trainers\",\r\n        \"description\": \"Yoga Mediatation Personal Trainer.\",\r\n        \"servicePrice\": 1499\r\n    },\r\n    {\r\n        \"name\": \"Salon\",\r\n        \"description\": \"Hair cut, clean up, facial services\",\r\n        \"servicePrice\": 899\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Service Providers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"serviceCode\": 1,\r\n        \"serviceName\": \"Electrician\",\r\n        \"serviceProviderList\": [\r\n            {\r\n                \"providerEmail\": \"ramesh.kumar@test.com\",\r\n                \"providerName\": \"Ramesh Kumar\",\r\n                \"contactNumber\": \"9090909\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"suresh.kumar@test.com\",\r\n                \"providerName\": \"Suresh Kumar\",\r\n                \"contactNumber\": \"9191919\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"ritesh.kumar@test.com\",\r\n                \"providerName\": \"Ritesh Kumar\",\r\n                \"contactNumber\": \"98989813\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"shivesh.kumar@test.com\",\r\n                \"providerName\": \"Shivesh Kumar\",\r\n                \"contactNumber\": \"9789020\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"hiresh.kumar4@test.com\",\r\n                \"providerName\": \"Hiresh Kumar\",\r\n                \"contactNumber\": \"9789020\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"serviceCode\": 2,\r\n        \"serviceName\": \"Yoga Trainer\",\r\n        \"serviceProviderList\": [\r\n            {\r\n                \"providerEmail\": \"yogaTrainer1@test.com\",\r\n                \"providerName\": \"Yoga Trainer 1\",\r\n                \"contactNumber\": \"998989898\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"yogaTrainer2@test.com\",\r\n                \"providerName\": \"Yoga Trainer2\",\r\n                \"contactNumber\": \"96287282\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"yogaTrainer3@test.com\",\r\n                \"providerName\": \"Yoga Trainer3r\",\r\n                \"contactNumber\": \"98289289\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"yogaTrainer4@test.com\",\r\n                \"providerName\": \"Yoga Trainer4\",\r\n                \"contactNumber\": \"82989289\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"serviceCode\": 3,\r\n        \"serviceName\":\"Salon Service\",\r\n        \"serviceProviderList\": [\r\n            {\r\n                \"providerEmail\": \"salonTrainer1@test.com\",\r\n                \"providerName\": \"Test Employee1\",\r\n                \"contactNumber\": \"9090909\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"salonTrainer2@test.com\",\r\n                \"providerName\": \"Test Employee2\",\r\n                \"contactNumber\": \"9090909\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"salonTrainer3@test.com\",\r\n                \"providerName\": \"Test Employee3\",\r\n                \"contactNumber\": \"9090909\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"salonTrainer4@test.com\",\r\n                \"providerName\": \"Test Employee4\",\r\n                \"contactNumber\": \"9090909\"\r\n            }\r\n        ]\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/provider",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"provider"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Service Provider By Service Code",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"serviceCode\": 1,\r\n        \"serviceName\": \"Electrician\",\r\n        \"serviceProviderList\": [\r\n            {\r\n                \"providerEmail\": \"ramesh.kumar@test.com\",\r\n                \"providerName\": \"Ramesh Kumar\",\r\n                \"contactNumber\": \"9090909\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"suresh.kumar@test.com\",\r\n                \"providerName\": \"Suresh Kumar\",\r\n                \"contactNumber\": \"9191919\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"ritesh.kumar@test.com\",\r\n                \"providerName\": \"Ritesh Kumar\",\r\n                \"contactNumber\": \"98989813\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"shivesh.kumar@test.com\",\r\n                \"providerName\": \"Shivesh Kumar\",\r\n                \"contactNumber\": \"9789020\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"shivesh.kumar4@test.com\",\r\n                \"providerName\": \"Shivesh Kumar\",\r\n                \"contactNumber\": \"9789020\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"serviceCode\": 2,\r\n        \"serviceName\": \"Yoga Trainer\",\r\n        \"serviceProviderList\": [\r\n            {\r\n                \"providerEmail\": \"yogaTrainer1@test.com\",\r\n                \"providerName\": \"Yoga Trainer 1\",\r\n                \"contactNumber\": \"998989898\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"yogaTrainer2@test.com\",\r\n                \"providerName\": \"Yoga Trainer2\",\r\n                \"contactNumber\": \"96287282\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"yogaTrainer3@test.com\",\r\n                \"providerName\": \"Yoga Trainer3r\",\r\n                \"contactNumber\": \"98289289\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"yogaTrainer4@test.com\",\r\n                \"providerName\": \"Yoga Trainer4\",\r\n                \"contactNumber\": \"82989289\"\r\n            }\r\n        ]\r\n    },\r\n    {\r\n        \"serviceCode\": 3,\r\n        \"serviceName\":\"Salon Service\",\r\n        \"serviceProviderList\": [\r\n            {\r\n                \"providerEmail\": \"salonTrainer1@test.com\",\r\n                \"providerName\": \"Test Employee1\",\r\n                \"contactNumber\": \"9090909\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"salonTrainer2@test.com\",\r\n                \"providerName\": \"Test Employee2\",\r\n                \"contactNumber\": \"9090909\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"salonTrainer3@test.com\",\r\n                \"providerName\": \"Test Employee3\",\r\n                \"contactNumber\": \"9090909\"\r\n            },\r\n            {\r\n                \"providerEmail\": \"salonTrainer4@test.com\",\r\n                \"providerName\": \"Test Employee4\",\r\n                \"contactNumber\": \"9090909\"\r\n            }\r\n        ]\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/provider/{serviceCode}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"provider",
+						"{serviceCode}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Consumer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"shivani@gmail.com\",\r\n    \"name\":\"Demo Consumer\",\r\n    \"address\":\"C-11/234 Sector-46 Gurgaon\",\r\n    \"contactNumber\":\"99999999\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/consumer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"consumer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Consumer By Email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/consumer/{email}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"consumer",
+						"{email}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"shivani@gmail.com\",\r\n    \"serviceCode\":\"1\",\r\n    \"servicePrice\":299\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/orders/{orderCode}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"orders",
+						"{orderCode}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order By Code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/api/orders/{orderCode}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"api",
+						"orders",
+						"{orderCode}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateOrder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/api/orders/{orderCode}/updateOrder?providerDecision=ACCEPT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"api",
+						"orders",
+						"{orderCode}",
+						"updateOrder"
+					],
+					"query": [
+						{
+							"key": "providerDecision",
+							"value": "ACCEPT"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
